@@ -31,6 +31,8 @@ gem 'database_cleaner'
 
 gem 'selenium-webdriver'
 
+gem 'simple_form'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
