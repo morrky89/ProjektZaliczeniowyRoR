@@ -1,4 +1,14 @@
 = form_for :project, url: projects_path  do |f|
+
+  - if @project.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@project.errors.count, "błąd, ")
+        nie można zapisać Projektu:
+      %ul
+        - @project.errors.full_messages.each do |msg|
+          %li= msg
+
   %p
     = f.label :title, 'Nazwa Projektu'
     %br/
