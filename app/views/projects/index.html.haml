@@ -1,0 +1,14 @@
+= link_to 'Nowy Projekt', new_project_path
+
+%h1 Lista Projektów
+%table
+  %tr
+    %th Nazwa Projektu
+    %th Opis Projektu
+  - @projects.each do |project|
+    %tr
+      %td= project.title
+      %td= project.text
+    
+%p
+  = link_to 'Powrót', controller: 'welcome'

@@ -1,11 +1,14 @@
 = form_for :project, url: projects_path  do |f|
   %p
-    = f.label :title
+    = f.label :title, 'Nazwa Projektu'
     %br/
     = f.text_field :title
   %p
-    = f.label :text
+    = f.label :text, 'Opis Projektu'
     %br/
     = f.text_area :text
   %p
-    = f.submit
+  = f.submit 'Zapisz Projekt'
+
+%p
+  = link_to 'Powrót', projects_path
