@@ -9,6 +9,11 @@
     %tr
       %td= project.title
       %td= project.text
+      %td= link_to 'Otworz', project_path(project)
+      %td= link_to 'Edytuj', edit_project_path(project)
+      %td= link_to 'Usun', project_path(project), |
+      method: :delete,                          |
+      data: { confirm: 'Czy jestes pewien?' }        |
     
 %p
   = link_to 'Powrót', controller: 'welcome'

@@ -1,0 +1,22 @@
+= form_for @project do |f| 
+
+  - if @project.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@project.errors.count, "error, ")
+        nie można zapisać Projektu:
+      %ul
+        - @project.errors.full_messages.each do |msg|
+          %li= msg
+
+  %p
+    = f.label :title, 'Nazwa Projektu'
+    %br/
+    = f.text_field :title
+  %p
+    = f.label :text, 'Opis Projektu'
+    %br/
+    = f.text_area :text
+  %p
+  = f.submit 'Zapisz Projekt'
+

@@ -1,7 +1,12 @@
-%p
-  %strong Nazwa projektu:
-  = @project.title
-%p
-  %strong Opis projektu:
-  = @project.text
-  
+%table
+  %tr
+    %th Nazwa Projektu
+    %th Opis Projektu
+    %th{:colspan => "2"}
+    %tr
+      %td= @project.title
+      %td= @project.text
+      
+= link_to 'Edycja', edit_project_path(@project)
+|
+\#{link_to 'Powrót', projects_path}
