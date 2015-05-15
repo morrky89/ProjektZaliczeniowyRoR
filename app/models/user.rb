@@ -4,5 +4,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
-
+  def full_name
+    #"#{first_name} #{last_name}"
+    [first_name, last_name].join(' ')
+  end
+  
+  def initials
+    first_name[0] + last_name[0]
+  end
 end

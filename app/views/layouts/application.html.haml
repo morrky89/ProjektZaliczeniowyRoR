@@ -47,104 +47,11 @@
           / /sidebar
           / /main
           .col-xs-12.col-sm-9{"data-spy" => "scroll", "data-target" => "#sidebar-nav"}
-            .row
-              .col-sm-6
-                .panel.panel-default
-                  .panel-heading
-                    %a.pull-right{:href => "#"} View all
-                    %h4 Newest Items
-                  .panel-body
-                    = yield
-                  / /panel-body
-                / /panel
-                .well
-                  %form.form-horizontal{:role => "form"}
-                    %h4 What's New
-                    .form-group{:style => "padding:14px;"}
-                      %textarea.form-control{:placeholder => "Update your status"}
-                    %button.btn.btn-success.pull-right{:type => "button"} Post
-                    %ul.list-inline
-                      %li
-                        %a{:href => "#"}
-                          %i.glyphicon.glyphicon-align-left
-                      %li
-                        %a{:href => "#"}
-                          %i.glyphicon.glyphicon-align-center
-                      %li
-                        %a{:href => "#"}
-                          %i.glyphicon.glyphicon-align-right
-                / /well
-                .panel.panel-default
-                  .panel-heading
-                    %a.pull-right{:href => "#"} View all
-                    %h4 Responsive Design
-                  .panel-body
-                    %p
-                      %img.img-circle.pull-right{:src => "//placehold.it/100"}/
-                      %a{:href => "#"} Bootstrap Playground
-                    .clearfix
-                    %hr/
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-                    Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
-                    dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-                    Aliquam in felis sit amet augue.
-                    %hr/
-                    .btn-group.pull-right.btn-toggle
-                      %button.btn.btn-default ON
-                      %button.btn.btn-primary.active OFF
-                  / /panel-body
-                / /panel
-              / /col
-              .col-sm-6
-                .well
-                  %form.form
-                    
-                / /well
-                .panel.panel-default
-                  .panel-heading
-                    %a.pull-right{:href => "#"} View all
-                    %h4 People You May Know
-                  .panel-body
-                    %p
-                      %img.img-circle.pull-right{:src => "//placehold.it/100"}/
-                      %a{:href => "#"} Bootstrap Playground
-                    .clearfix
-                    %hr/
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-                    Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
-                    dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-                    Aliquam in felis sit amet augue.
-                    %hr/
-                    .btn-group.pull-right.btn-toggle
-                      %button.btn.btn-default ON
-                      %button.btn.btn-primary.active OFF
-                  / /panel-body
-                / /panel
-                .panel.panel-default
-                  .panel-heading
-                    %a.pull-right{:href => "#"} View all
-                    %h4 Portlet Heading
-                  .panel-body
-                    %ul.list-group
-                      %li.list-group-item
-                        %span.btn-group.btn-toggle.pull-right{:href => "#"}
-                          %button.btn.btn-xs.btn-default On
-                          %button.btn.btn-xs.btn-primary.active Off
-                        Bootply
-                      %li.list-group-item
-                        %span.btn-group.btn-toggle.pull-right{:href => "#"}
-                          %button.btn.btn-xs.btn-primary.active On
-                          %button.btn.btn-xs.btn-default Off
-                        Templates
-                      %li.list-group-item
-                        %span.btn-group.btn-toggle.pull-right{:href => "#"}
-                          %button.btn.btn-xs.btn-default On
-                          %button.btn.btn-xs.btn-primary.active Off
-                        Snippets
-                  / /panel-body
-                / /panel
-              / /col
-            / /row
+            .panel.panel-default
+              .panel-heading
+              .panel-body
+                = yield
+                
             
     .clearfix
         
