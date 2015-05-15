@@ -1,0 +1,22 @@
+= simple_form_for ([@project, @project.tickets.build])  do |f| 
+
+  - if @ticket.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@ticket.errors.count, "error, ")
+        nie można zapisać Ticketu:
+      %ul
+        - @ticket.errors.full_messages.each do |msg|
+          %li= msg
+
+  %p
+    = f.label :title, 'Nazwa Ticketu'
+    %br/
+    = f.text_field :title
+  %p
+    = f.label :text, 'Opis Ticketu'
+    %br/
+    = f.text_area :text
+  %p
+  = f.submit 'Zapisz Ticket'
+

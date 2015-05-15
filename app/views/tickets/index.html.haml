@@ -1,0 +1,19 @@
+= link_to 'Nowy Ticket', new_project_ticket_path
+
+%h1 Lista Ticketów
+%table.table.table-striped
+  %tr
+    %th Nazwa Ticketu
+    %th Opis Ticketu
+  - @tickets.each do |ticket|
+    %tr
+      %td= ticket.title
+      %td= ticket.text
+      %td= link_to 'Otworz', project_tickets_path(ticket)
+      %td= link_to 'Edytuj' , edit_project_ticket_path(ticket.project,ticket)
+      %td= link_to 'Usun', [ticket.project, ticket], |
+      method: :delete,                          |
+      data: { confirm: 'Czy jestes pewien?' }        |
+    
+%p
+  = link_to 'Powrót', controller: 'welcome'

@@ -1,0 +1,12 @@
+%table
+  %tr
+    %th Nazwa Ticketu
+    %th Opis Ticketu
+    %th{:colspan => "2"}
+    %tr
+      %td= @ticket.title
+      %td= @ticket.text
+      
+= link_to 'Edycja', edit_project_ticket_path(@ticket)
+|
+\#{link_to 'Powrót', project_tickets_path}

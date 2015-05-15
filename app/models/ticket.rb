@@ -1,5 +1,7 @@
-class Project < ActiveRecord::Base
-    has_many :tickets, dependent: :destroy
+class Ticket < ActiveRecord::Base
+    belongs_to :project
     validates :title, presence: true,
                     length: { minimum: 5 }
+                    
+    
 end
