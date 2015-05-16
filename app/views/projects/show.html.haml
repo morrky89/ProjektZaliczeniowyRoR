@@ -6,6 +6,9 @@
       %td= @project.title
       %td= @project.text
 %br
+= link_to 'Lista Ticketów', project_tickets_path(@project), :class => 'btn btn-large btn-primary'
+%br
+%br
 = link_to 'Edycja', edit_project_path(@project), :class => 'btn btn-large btn-primary'
 |
 \#{link_to 'Powrót', projects_path, :class => 'btn btn-large btn-primary'}

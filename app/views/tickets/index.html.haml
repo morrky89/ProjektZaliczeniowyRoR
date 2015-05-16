@@ -1,19 +1,22 @@
-= link_to 'Nowy Ticket', new_project_ticket_path
+= link_to 'Nowy Ticket', new_project_ticket_path, :class => 'btn btn-info btn-primary'
 
-%h1 Lista Ticketów
+%h1 Lista Ticketów projektu #{@project.title}
 %table.table.table-striped
   %tr
     %th Nazwa Ticketu
     %th Opis Ticketu
+    %th
+    %th
+    %th
   - @tickets.each do |ticket|
     %tr
       %td= ticket.title
       %td= ticket.text
-      %td= link_to 'Otworz', project_tickets_path(ticket)
-      %td= link_to 'Edytuj' , edit_project_ticket_path(ticket.project,ticket)
-      %td= link_to 'Usun', [ticket.project, ticket], |
+      %td= link_to 'Otworz', project_ticket_path(ticket.project,ticket), :class => 'btn btn-default btn-primary'
+      %td= link_to 'Edytuj' , edit_project_ticket_path(ticket.project,ticket), :class => 'btn btn-warning btn-primary'
+      %td= link_to 'Usun', [ticket.project, ticket], :class => 'btn btn-danger btn-primary', |
       method: :delete,                          |
       data: { confirm: 'Czy jestes pewien?' }        |
     
 %p
-  = link_to 'Powrót', controller: 'welcome', :class => 'btn btn-large btn-primary'
+  = link_to 'Powrót', project_path(@project), :class => 'btn btn-large btn-primary'
