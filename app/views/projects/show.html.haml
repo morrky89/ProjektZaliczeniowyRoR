@@ -1,12 +1,13 @@
-%table
+%table.table-striped.table-condensed
   %tr
-    %th Nazwa Projektu
-    %th Opis Projektu
-    %th{:colspan => "2"}
+    %th Nazwa Projektu 
+    %th Opis Projektu 
     %tr
       %td= @project.title
       %td= @project.text
-      
-= link_to 'Edycja', edit_project_path(@project)
+%br
+= link_to 'Edycja', edit_project_path(@project), :class => 'btn btn-large btn-primary'
 |
-\#{link_to 'Powrót', projects_path}
+\#{link_to 'Powrót', projects_path, :class => 'btn btn-large btn-primary'}
+
+

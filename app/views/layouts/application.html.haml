@@ -3,7 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
     %meta{:charset => "utf-8"}/
-    %title Holo Theme
+    %title Zarządzacz Projektami
     %meta{:content => "Bootply", :name => "generator"}/
     %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}/
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
@@ -41,9 +41,9 @@
                   = link_to 'O systemie', projects_path
                   
                 - if user_signed_in?
-                  %li #{link_to 'Sign out', destroy_user_session_path, method: :delete}
+                  = link_to('Wyloguj', destroy_user_session_path, method: :delete, :class => 'btn btn-large btn-primary')
                 - else
-                  = link_to 'Sign in', new_user_session_path      
+                  = link_to('Logowanie', new_user_session_path, :class => 'btn btn-large btn-primary')    
           / /sidebar
           / /main
           .col-xs-12.col-sm-9{"data-spy" => "scroll", "data-target" => "#sidebar-nav"}
@@ -62,7 +62,7 @@
         .row
           %ul.list-unstyled.text-right
             %li.col-sm-4.col-xs-6
-              %a{:href => "#"} O projekcie
+              %a{:href => "#"} Projekt zaliczeniowy Ruby on Rails
         / /row
       / /container
     / script references

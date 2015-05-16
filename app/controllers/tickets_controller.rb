@@ -22,7 +22,7 @@ class TicketsController < ApplicationController
         @ticket = @project.tickets.create(ticket_params)
  
         if @ticket.save
-          redirect_to @project
+          redirect_to project_tickets_path
         else
           render 'new'
         end
