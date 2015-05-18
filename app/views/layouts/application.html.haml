@@ -13,6 +13,7 @@
     #flash
       = flash[:notice] if flash[:notice]
       = flash[:alert] if flash[:alert]
+      
     /[if lt IE 9]
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
   %body
@@ -51,8 +52,7 @@
               .panel-heading
               .panel-body
                 = yield
-                
-            
+    = render 'cookies_eu/cookies_eu'            
     .clearfix
         
     / /.page-container
@@ -69,3 +69,5 @@
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"}
     %script{:src => "assets/javascripts/bootstrap.min.js"}
     %script{:src => "assets/javascripts/scripts.js"}
+    
+    

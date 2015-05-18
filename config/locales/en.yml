@@ -21,3 +21,10 @@
 
 en:
   hello: "Hello world"
+
+
+en:
+  cookies_eu:
+    cookies_text: "Ta strona używa ciasteczek (cookies), dzięki którym nasz serwis może działać lepiej."
+    learn_more: "Learn more"
+    ok: "OK"

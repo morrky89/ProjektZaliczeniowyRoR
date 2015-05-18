@@ -2,10 +2,17 @@
   %tr
     %th Nazwa Ticketu
     %th Opis Ticketu
+    %th Priorytet
+    %th Stopień Trudności
+    %th Status
     %th{:colspan => "2"}
     %tr
       %td= @ticket.title
       %td= @ticket.text
+      %td= @ticket.priority
+      %td= @ticket.difficulty
+      %td= @ticket.status
+
       
 %br
 = link_to 'Edycja', edit_project_ticket_path(@project,@ticket), :class => 'btn btn-large btn-primary'

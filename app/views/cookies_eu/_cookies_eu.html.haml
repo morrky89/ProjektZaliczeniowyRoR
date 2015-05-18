@@ -1,0 +1,6 @@
+- if cookies['cookie_eu_consented'] != 'true'
+  .cookies-eu
+    %span.cookies-eu-content-holder= t('cookies_eu.cookies_text')
+    %span.cookies-eu-button-holder
+      %button.cookies-eu-ok
+        = t("cookies_eu.ok")
