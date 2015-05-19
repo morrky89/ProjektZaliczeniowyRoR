@@ -2,13 +2,28 @@
   %tr
     %th Nazwa Projektu 
     %th Opis Projektu 
+    %th Właściciel Projektu
     %tr
       %td= @project.title
       %td= @project.text
+      - unless @users.find_by_id(@project.owner) == nil
+        %td= @users.find(@project.owner).first_name
+      - else
+        %td Brak
 %br
 = link_to 'Lista Ticketów', project_tickets_path(@project), :class => 'btn btn-large btn-primary'
 %br
 %br
+
+- unless @users.find_by_id(@project.owner) == nil
+  - if current_user.id = @project.owner
+    %p
+      = link_to 'Dodaj współpracownika', projects_new_account_path, :class => 'btn btn-large btn-primary'
+- else 
+  Brak
+
+%br
+
 = link_to 'Edycja', edit_project_path(@project), :class => 'btn btn-large btn-primary'
 |
 \#{link_to 'Powrót', projects_path, :class => 'btn btn-large btn-primary'}

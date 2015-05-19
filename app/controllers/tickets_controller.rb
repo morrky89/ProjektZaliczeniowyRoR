@@ -59,7 +59,7 @@ class TicketsController < ApplicationController
             params.require(:ticket).permit(:title, :text, :priority, :difficulty, :status, :attachment, :filename, :delete_attachment)
         end
         def remove_attachment
-            self.attachment = nil
+          self.attachment = nil
         end
        
 end

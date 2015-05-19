@@ -8,10 +8,13 @@ class ProjectsController < ApplicationController
     
     def new
         @project = Project.new
+       
     end
+    
     
     def show
         @project = Project.find(params[:id])
+        @users = User.all
     end
     
     
@@ -27,6 +30,7 @@ class ProjectsController < ApplicationController
     
     def edit
         @project = Project.find(params[:id])
+        @users = User.all
     end
     
     def update
@@ -50,6 +54,6 @@ class ProjectsController < ApplicationController
     
     private
         def project_params
-            params.require(:project).permit(:title, :text)
+            params.require(:project).permit(:title, :text, :owner)
         end
 end

@@ -10,5 +10,8 @@ class Ticket < ActiveRecord::Base
    # before_validation { attachment.clear if delete_attachment== '1' }
     has_attached_file :attachment, styles: {thumbnail: "60x60#"}
     validates :attachment, :attachment_presence => false
-    validates_attachment :attachment, :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png",  "application/pdf"] }
+    validates_attachment :attachment, :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png",  "application/pdf","application/vnd.ms-excel",     
+             "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+             "application/msword", 
+             "application/vnd.openxmlformats-officedocument.wordprocessingml.document",] }
 end
