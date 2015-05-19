@@ -44,13 +44,14 @@
       = f.input :attachment, as: :file
     - else
       = f.input :attachment, as: :file
-      - if @ticket.filename != nil
-        = link_to  @ticket.filename, @ticket.attachment.url(:original, false)
-      -else
-        = link_to  @ticket.attachment.url, @ticket.attachment.url(:original, false)
-      %label
-        Remove the picture
-      = f.check_box :delete_attachment
+      - if @ticket.attachment.presence != nil
+        - if @ticket.filename != nil
+          = link_to  @ticket.filename, @ticket.attachment.url(:original, false)
+        -else
+          = link_to  @ticket.attachment.url, @ticket.attachment.url(:original, false)
+        %label
+          Usuń załącznik
+        = f.check_box :delete_attachment
   
   %p
   = f.submit 'Zapisz Ticket', :class => 'btn btn-success btn-primary'
