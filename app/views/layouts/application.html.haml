@@ -8,6 +8,7 @@
     %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}/
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
+
     
     = csrf_meta_tags
     #flash
@@ -57,6 +58,8 @@
                 = yield
     = render 'cookies_eu/cookies_eu'            
     .clearfix
+    
+ 
         
     / /.page-container
     %footer
@@ -69,8 +72,6 @@
         / /row
       / /container
     / script references
-    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"}
-    %script{:src => "assets/javascripts/bootstrap.min.js"}
-    %script{:src => "assets/javascripts/scripts.js"}
+
     
     

@@ -15,12 +15,6 @@
 %br
 %br
 
-- unless @users.find_by_id(@project.owner) == nil
-  - if current_user.id = @project.owner
-    %p
-      = link_to 'Dodaj współpracownika', projects_new_account_path, :class => 'btn btn-large btn-primary'
-- else 
-  Brak
 
 %br
 
