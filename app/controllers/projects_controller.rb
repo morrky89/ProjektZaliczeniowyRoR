@@ -20,8 +20,6 @@ class ProjectsController < ApplicationController
     
     def create
         @project = Project.new(project_params)
-        @users = User.all
-        @project.users<<@users
  
         if @project.save
           redirect_to @project

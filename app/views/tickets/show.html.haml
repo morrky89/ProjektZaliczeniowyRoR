@@ -5,6 +5,7 @@
     %th Priorytet
     %th Stopień Trudności
     %th Status
+    %th Załącznik
     %th{:colspan => "2"}
     %tr
       %td= @ticket.title
@@ -12,7 +13,9 @@
       %td= @ticket.priority
       %td= @ticket.difficulty
       %td= @ticket.status
-      %td= @ticket.attachment
+      %td
+        - if @ticket.attachment != '/attachments/original/missing.png'
+          = link_to  @ticket.attachment.url, @ticket.attachment.url(:original, false)
       
 
       
