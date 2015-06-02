@@ -26,6 +26,8 @@
     = f.label :text, @users.find(@project.owner).first_name
   - else 
     Brak
+  
+    
   %p
     = f.submit 'Zapisz Projekt', :class => 'btn btn-success btn-primary'
 %br

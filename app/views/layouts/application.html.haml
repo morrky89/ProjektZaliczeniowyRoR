@@ -37,10 +37,6 @@
                   = link_to 'Strona Główna', '/'
                 %li
                   = link_to 'Lista Projektów', projects_path
-                %li
-                  = link_to 'Ustawienia systemu', projects_path
-                %li
-                  = link_to 'O systemie', projects_path
                   
                 - if user_signed_in?
                   = link_to('Wyloguj', destroy_user_session_path, method: :delete, :class => 'btn btn-large btn-primary')

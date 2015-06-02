@@ -53,6 +53,12 @@
           Usuń załącznik
         = f.check_box :delete_attachment
   
+  %p  
+    = f.label "Współpracownicy"
+    = select_tag "zespol", options_from_collection_for_select(User.all, 'id', 'last_name',@ticket.users.map{ |j| j.id }), :multiple => true
+
+  
+  
   %p
   = f.submit 'Zapisz Ticket', :class => 'btn btn-success btn-primary'
 %br

@@ -20,6 +20,9 @@ class TicketsController < ApplicationController
     def create
         @project = Project.find(params[:project_id])
         @ticket = @project.tickets.create(ticket_params)
+        
+        @users = User.all
+        @ticket.users<<@users
  
         if @ticket.save
           redirect_to project_tickets_path
